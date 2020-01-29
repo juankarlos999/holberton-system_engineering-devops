@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -la ./ /home /boot
+ls -laU ./ /home /boot
