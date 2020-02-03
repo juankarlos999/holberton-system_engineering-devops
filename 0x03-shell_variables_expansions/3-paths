@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $PATH |grep -o ":"| uniq -c
+echo $PATH |tr -t [:] [\\n]|wc -l
