@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#Script that loops from 1 to 10 and:
+#	displays bad luck for the 4th loop iteration
+#	displays good luck for the 8th loop iteration
+#	displays Holberton School for the other iterations
+cont=1
+while [ $cont -le 10 ]
+do
+	if [ $cont = 4 ]
+then
+	echo "bad luck"
+	elif [ $cont = 8 ]
+then
+	echo "good luck"
+	else
+	echo "Holberton School"
+fi
+	((cont++))
+done
