@@ -3,7 +3,7 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-sed -i "s/server_name _;/server_name _ ^\/redirect_me;/" /etc/nginx/sites-enabled/default
-Redirection="server_name _ ^\/redirect_me;\n\treturn 301 https://www.holbertonschool.com\$request_uri;"
-sed -i "s/server_name _;/$Redirection" /etc/nginx/sites-enabled/default
+sed -i "s/server_name _;/server_name ^\/redirect_me;/" /etc/nginx/sites-enabled/default
+Redirection="\ \treturn 301 https://www.holbertonschool.com\$request_uri;"
+sed -i "/server_name ^\/redirect_me;/a$Redirection" /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx start
