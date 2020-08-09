@@ -2,8 +2,7 @@
 # Install nginx web server
 sudo apt-get -y update
 sudo apt-get -y install nginx
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
-Redirection="\ \treturn 301 https://www.holbertonschool.com\$request_uri;\n"
-Page_404="\ \treturn 404 \"Ceci n'est pas une page\";"
-sed -i "/server_name _;/a$Redirection$Page_404" /etc/nginx/sites-enabled/default
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+Page_404="\ \terror_page 404 \/404.html;\n location  /404.html {\ninternal;\n}"
+sed -i "/server_name _;/a$Page_404" /etc/nginx/sites-available/default
 sudo /etc/init.d/nginx start
