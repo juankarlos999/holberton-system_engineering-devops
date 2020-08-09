@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Install nginx web server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+Page_404="\ \treturn 404 \"Ceci n'est pas une page\";"
+sed -i "/server_name _;/a$Page_404" /etc/nginx/sites-enabled/default
+sudo /etc/init.d/nginx start
