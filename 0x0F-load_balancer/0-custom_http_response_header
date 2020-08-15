@@ -6,6 +6,6 @@ echo "Holberton School" > /var/www/html/index.nginx-debian.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 Page_404="\ \terror_page 404 \/404.html;\n\tlocation  /404.html {\n\t\tinternal;\n\t}"
 Redirection="\ \trewrite ^\/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n"
-sed -i "/server_name _;/a$Redirection$Page_404" /etc/nginx/sites-enabled/default
-sed -i "s/server_name _;/$new_string$nstr1$nstr2/" /etc/nginx/sites-enabled/default
+Xserv="\n\tadd_header X-Served-By \$hostname;"
+sed -i "/server_name _;/a$Redirection$Xserv$Page_404" /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx start
