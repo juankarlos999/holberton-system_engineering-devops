@@ -42,7 +42,7 @@ frontend http
 frontend https
          bind *:443 ssl crt /etc/haproxy/certs/www.juankarlos999.tech.pem
          reqadd X-Forwarded-Proto:\ https
-         default_backend web-server
+         default_backend web-backend
 
 backend web-backend
 	balance roundrobin
