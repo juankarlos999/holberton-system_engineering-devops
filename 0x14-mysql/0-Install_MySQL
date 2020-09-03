@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Install MySQL 5.7
+
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install mysql-server-5.7
